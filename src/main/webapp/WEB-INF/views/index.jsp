@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: surajgautam
@@ -7,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:set value="${pageContext.request.contextPath}" var="site_url"/>
 <html lang="en">
 
 <head>
@@ -17,7 +18,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Ram Janaki Furnishing</title>
+    <title>RamJanaki Decoration-${title}</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
@@ -40,8 +41,21 @@
 <%@ include file="common/navbar.jsp"%>
 
 <!-- Page Content -->
+<c:if test="${userHome == true}">
 <%@include file="home.jsp"%>
+</c:if>
 <!-- /.container -->
+
+
+<!-- /.container -->
+<c:if test="${userAbout == true}">
+<%@ include file="about.jsp"%>
+</c:if>
+
+
+<c:if test="${userContact==true}">
+<%@ include file="contact.jsp"%>
+</c:if>
 
 <div class="container">
 
@@ -51,7 +65,6 @@
     <%@include file="common/footer.jsp"%>
 
 </div>
-<!-- /.container -->
 
 <!-- jQuery -->
 <script src="<c:url value="/resources/js/jquery.js"/>" ></script>

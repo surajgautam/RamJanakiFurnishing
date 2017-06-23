@@ -16,6 +16,29 @@ public class FrontendController {
    @RequestMapping(value={"/","/index"},method = RequestMethod.GET)
     public ModelAndView returnIndexPage(){
         ModelAndView modelAndView = new ModelAndView("index");
+       modelAndView.addObject("userHome",true);
+       modelAndView.addObject("title","Home");
+
+        return  modelAndView;
+
+    }
+
+
+
+    @RequestMapping(value={"/aboutus"},method = RequestMethod.GET)
+    public ModelAndView returnAboutUs(){
+        ModelAndView modelAndView = new ModelAndView("index");
+        modelAndView.addObject("userAbout",true);
+        modelAndView.addObject("title","About Us");
+        return  modelAndView;
+
+    }
+
+    @RequestMapping(value={"/contact"},method = RequestMethod.GET)
+    public ModelAndView returnContact(){
+        ModelAndView modelAndView = new ModelAndView("index");
+        modelAndView.addObject("userContact",true);
+        modelAndView.addObject("title","Contact");
         return  modelAndView;
 
     }

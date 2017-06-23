@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -16,19 +17,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <a class="navbar-brand" href="${site_url}/index">RamJanaki Decoration</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#">About</a>
+                    <a href="${site_url}/aboutus">About US</a>
                 </li>
                 <li>
-                    <a href="#">Services</a>
+                    <a href="${site_url}/products">Products</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="${site_url}/contact">Contact</a>
                 </li>
             </ul>
         </div>
