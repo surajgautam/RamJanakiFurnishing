@@ -17,19 +17,22 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="${site_url}/index">RamJanaki Decoration</a>
+            <a class="navbar-brand" id="home" href="${site_url}/index">RamJanaki Decoration</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li>
+                <li id="aboutus">
                     <a href="${site_url}/aboutus">About US</a>
                 </li>
-                <li>
+                <li id="products">
                     <a href="${site_url}/products">Products</a>
                 </li>
-                <li>
+                <li id="contact">
                     <a href="${site_url}/contact">Contact</a>
+                </li>
+                <li>
+                    <a href="${site_url}/login">Login</a>
                 </li>
             </ul>
         </div>

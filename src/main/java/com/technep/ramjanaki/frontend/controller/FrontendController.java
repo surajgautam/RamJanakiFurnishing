@@ -1,5 +1,6 @@
 package com.technep.ramjanaki.frontend.controller;
 
+import org.apache.taglibs.standard.lang.jstl.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,6 +40,15 @@ public class FrontendController {
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("userContact",true);
         modelAndView.addObject("title","Contact");
+        return  modelAndView;
+
+    }
+
+    @RequestMapping(value={"/login"},method = RequestMethod.GET)
+    public ModelAndView returnLogin(){
+        ModelAndView modelAndView = new ModelAndView("index");
+        modelAndView.addObject("userLogin",true);
+        modelAndView.addObject("title","Login");
         return  modelAndView;
 
     }

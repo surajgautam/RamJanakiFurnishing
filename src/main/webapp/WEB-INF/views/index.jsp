@@ -20,11 +20,18 @@
 
     <title>RamJanaki Decoration-${title}</title>
 
+    <script>
+        window.menu = '${title}';
+    </script>
+
     <!-- Bootstrap Core CSS -->
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="<c:url value="/resources/css/shop-homepage.css" />" rel="stylesheet">
+
+    <!--Custom theme-->
+    <link href="<c:url value="/resources/css/bootstrap-custom-theme.css" />" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,40 +44,55 @@
 
 <body>
 
-<!-- Navigation -->
-<%@ include file="common/navbar.jsp"%>
+<div class="wrapper">
+    <!-- Navigation -->
+    <%@ include file="common/navbar.jsp" %>
 
-<!-- Page Content -->
-<c:if test="${userHome == true}">
-<%@include file="home.jsp"%>
-</c:if>
-<!-- /.container -->
+    <div class="content">
 
-
-<!-- /.container -->
-<c:if test="${userAbout == true}">
-<%@ include file="about.jsp"%>
-</c:if>
+        <!-- Page Content -->
+        <c:if test="${userHome == true}">
+            <%@include file="home.jsp" %>
+        </c:if>
+        <!-- /.container -->
 
 
-<c:if test="${userContact==true}">
-<%@ include file="contact.jsp"%>
-</c:if>
+        <!-- /.container -->
+        <c:if test="${userAbout == true}">
+            <%@ include file="about.jsp" %>
+        </c:if>
 
-<div class="container">
 
-    <hr>
+        <c:if test="${userContact==true}">
+            <%@ include file="contact.jsp" %>
+        </c:if>
 
-    <!-- Footer -->
-    <%@include file="common/footer.jsp"%>
+        <c:if test="${userLogin==true}">
+            <%@ include file="login.jsp" %>
+        </c:if>
+    </div>
+
+
+
+        <hr>
+
+        <!-- Footer -->
+        <%@include file="common/footer.jsp" %>
+
+
+    <!-- jQuery -->
+    <script src="<c:url value="/resources/js/jquery.js"/>"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+
+    <!--Custom js -->
+    <script scr="<c:url value="/resources/js/custom.js"/>"></script>
+
+
+
 
 </div>
-
-<!-- jQuery -->
-<script src="<c:url value="/resources/js/jquery.js"/>" ></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 
 </body>
 
