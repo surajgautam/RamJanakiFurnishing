@@ -8,6 +8,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <c:set value="${pageContext.request.contextPath}" var="site_url"/>
+
 <html lang="en">
 
 <head>
@@ -22,16 +23,20 @@
 
     <script>
         window.menu = '${title}';
+        window.siteURL='${site_url}';
     </script>
 
     <!-- Bootstrap Core CSS -->
-    <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="<c:url value="/resources/css/shop-homepage.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/bootstrap.min.css"/> " rel="stylesheet">
 
     <!--Custom theme-->
     <link href="<c:url value="/resources/css/bootstrap-custom-theme.css" />" rel="stylesheet">
+
+    <!--Datatable bootstrap css-->
+    <link href="<c:url value="/resources/css/dataTables.bootstrap.css " />" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="<c:url value="/resources/css/shop-homepage.css" />" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -46,7 +51,7 @@
 
 <div class="wrapper">
     <!-- Navigation -->
-    <%@ include file="common/navbar.jsp" %>
+    <%@ include file="./common/navbar.jsp" %>
 
     <div class="content">
 
@@ -70,6 +75,10 @@
         <c:if test="${userLogin==true}">
             <%@ include file="login.jsp" %>
         </c:if>
+
+        <c:if test="${userSingleProduct==true or userAllProducts==true}">
+            <%@ include file="products.jsp" %>
+        </c:if>
     </div>
 
 
@@ -77,17 +86,24 @@
         <hr>
 
         <!-- Footer -->
-        <%@include file="common/footer.jsp" %>
+        <%@include file="./common/footer.jsp" %>
 
 
     <!-- jQuery -->
-    <script src="<c:url value="/resources/js/jquery.js"/>"></script>
+    <script src="<c:url value="/resources/js/jquery.js" />"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 
+    <!--Data Table-->
+    <script src="<c:url value="/resources/js/jquery.dataTables.js" />"></script>
+
+    <!--Data Table js -->
+    <script src="<c:url value="/resources/js/dataTables.bootstrap.js" />"></script>
+
+
     <!--Custom js -->
-    <script scr="<c:url value="/resources/js/custom.js"/>"></script>
+    <script src = "<c:url value="/resources/js/custom.js" />"></script>
 
 
 
