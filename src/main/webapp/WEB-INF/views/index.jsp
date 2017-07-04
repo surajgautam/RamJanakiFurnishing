@@ -19,7 +19,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>RamJanaki Decoration-${title}</title>
+    <title>R J- ${title}</title>
 
     <script>
         window.menu = '${title}';
@@ -78,6 +78,14 @@
 
         <c:if test="${userSingleProduct==true or userAllProducts==true}">
             <%@ include file="products.jsp" %>
+        </c:if>
+
+        <c:if test="${userProductDetail == true}">
+            <%@ include file="details.jsp" %>
+        </c:if>
+
+        <c:if test="${userErrorStatus == true}">
+            <%@ include file="errorpage.jsp" %>
         </c:if>
     </div>
 

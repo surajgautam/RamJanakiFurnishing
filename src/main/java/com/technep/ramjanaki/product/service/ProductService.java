@@ -9,9 +9,13 @@ import java.util.List;
  */
 public interface ProductService {
 
-    List<Product> getAllProducts();
+    List<Product> getActiveProducts();
 
     List<Product> getProductByCategory(int id);
+
+    Product getProductByProductId(int id);
+
+    void updateProduct(Product product);
 
 
 

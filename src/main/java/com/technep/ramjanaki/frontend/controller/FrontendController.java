@@ -2,6 +2,9 @@ package com.technep.ramjanaki.frontend.controller;
 
 import com.technep.ramjanaki.category.model.Category;
 import com.technep.ramjanaki.category.service.CategoryService;
+import com.technep.ramjanaki.exception.ProductNotFoundException;
+import com.technep.ramjanaki.product.model.Product;
+import com.technep.ramjanaki.product.service.ProductService;
 import org.apache.taglibs.standard.lang.jstl.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,10 +22,13 @@ public class FrontendController {
     @Autowired
     private CategoryService categoryService;
 
+    @Autowired
+    private ProductService productService;
+
     @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
     public ModelAndView returnIndexPage() {
         ModelAndView modelAndView = new ModelAndView("index");
-        List<Category> allCategories = categoryService.getAllCategories();
+        List<Category> allCategories = categoryService.getActiveCategories();
         //checking if list of categories is null or not
         if (allCategories != null) {
             modelAndView.addObject("categories", allCategories);
@@ -60,10 +66,11 @@ public class FrontendController {
         return modelAndView;
 
     }
+    //showing all products
     @RequestMapping(value = {"/show/products"}, method = RequestMethod.GET)
     public ModelAndView showAllProducts() {
         ModelAndView modelAndView = new ModelAndView("index");
-        List<Category> allCategories = categoryService.getAllCategories();
+        List<Category> allCategories = categoryService.getActiveCategories();
         if(allCategories!=null){
             modelAndView.addObject("categories",allCategories);
         }
@@ -74,9 +81,9 @@ public class FrontendController {
     }
 
     @RequestMapping(value = {"/show/category/{pid}/products"}, method = RequestMethod.GET)
-    public ModelAndView showProductsByCategory(@PathVariable("pid") int pid) {
+    public ModelAndView showProductsByCategory(@PathVariable("pid") int pid) throws ProductNotFoundException {
         ModelAndView modelAndView = new ModelAndView("index");
-        List<Category> allCategories = categoryService.getAllCategories();
+        List<Category> allCategories = categoryService.getActiveCategories();
         if(allCategories!=null){
             modelAndView.addObject("categories",allCategories);
         }
@@ -84,8 +91,35 @@ public class FrontendController {
         if(categoryById!=null){
             modelAndView.addObject("category",categoryById);
         }
+        else
+            throw new ProductNotFoundException("The product you are looking for doesn't exist");
         modelAndView.addObject("userSingleProduct", true);
         modelAndView.addObject("title", "View Product");
+        return modelAndView;
+
+    }
+
+    //used for dispalying single product
+
+    @RequestMapping(value = "/show/{pid}/product")
+    public ModelAndView showProductById(@PathVariable("pid") int pid) throws ProductNotFoundException {
+
+        ModelAndView modelAndView = new ModelAndView("index");
+        modelAndView.addObject("userProductDetail",true);
+
+        Product productByProductId = productService.getProductByProductId(pid);
+
+        if(productByProductId!=null){
+            modelAndView.addObject("product",productByProductId);
+            modelAndView.addObject("title",productByProductId.getPname());
+            productByProductId.setViews(productByProductId.getViews()+1);
+            productService.updateProduct(productByProductId);
+        }
+        else
+            throw new ProductNotFoundException("The product you are looking for doesn't exist");
+
+
+
         return modelAndView;
 
     }

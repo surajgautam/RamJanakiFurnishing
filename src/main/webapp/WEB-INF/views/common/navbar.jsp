@@ -39,6 +39,11 @@
                     <a href="${site_url}/contact">Contact</a>
                 </li>
 
+
+                <li id="admin">
+                    <a href="${site_url}/admin/manage">Admin Panel</a>
+                </li>
+
             </ul>
         </div>
         <!-- /.navbar-collapse -->

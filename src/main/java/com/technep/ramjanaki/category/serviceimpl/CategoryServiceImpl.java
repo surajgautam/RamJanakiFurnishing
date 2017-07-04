@@ -20,6 +20,10 @@ public class CategoryServiceImpl implements CategoryService {
     CategoryDao categoryDao;
 
 
+    public List<Category> getActiveCategories() {
+        return categoryDao.getActiveCategories();
+    }
+
     public List<Category> getAllCategories() {
         return categoryDao.getAllCategories();
     }
@@ -30,5 +34,13 @@ public class CategoryServiceImpl implements CategoryService {
 
     public boolean addCategory(Category category) {
         return categoryDao.addCategory(category);
+    }
+
+    public void updateCategory(Category category) {
+        categoryDao.updateCategory(category);
+    }
+
+    public void deleteCategory(int id) {
+        categoryDao.deleteCategory(id);
     }
 }

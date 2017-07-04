@@ -19,11 +19,19 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductDao productDao;
 
-    public List<Product> getAllProducts() {
-      return productDao.getAllProducts();
+    public List<Product> getActiveProducts() {
+      return productDao.getActiveProducts();
     }
 
     public List<Product> getProductByCategory(int id) {
         return productDao.getProductByCategory(id);
+    }
+
+    public Product getProductByProductId(int id) {
+        return productDao.getProductByProductId(id);
+    }
+
+    public void updateProduct(Product product) {
+        productDao.updateProduct(product);
     }
 }

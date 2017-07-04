@@ -22,8 +22,12 @@ public class CategoryDaoImpl implements CategoryDao {
     private SessionFactory sessionFactory;
 
 
-    public List<Category> getAllCategories() {
+    public List<Category> getActiveCategories() {
         return sessionFactory.getCurrentSession().createQuery("From Category c where c.active=:active").setParameter("active",true).list();
+    }
+
+    public List<Category> getAllCategories() {
+        return sessionFactory.getCurrentSession().createQuery("From Category c").list();
     }
 
     public Category getCategoryById(int id) {
@@ -38,6 +42,14 @@ public class CategoryDaoImpl implements CategoryDao {
             logger.info(e.getMessage());
             return false;
         }
+    }
+
+    public void updateCategory(Category category) {
+        sessionFactory.getCurrentSession().update(category);
+    }
+
+    public void deleteCategory(int id) {
+        sessionFactory.getCurrentSession().createQuery("DELETE from Category c where c.cid=:id").setParameter("id",id).executeUpdate();
     }
 }
 

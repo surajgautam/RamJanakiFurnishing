@@ -18,13 +18,21 @@ public class ProductDaoImpl implements ProductDao {
     private SessionFactory sessionFactory;
 
 
-    public List<Product> getAllProducts() {
-        return sessionFactory.getCurrentSession().createQuery("From Product p where p.active=:active").setParameter("active",true).list();
+    public List<Product> getActiveProducts() {
+        return sessionFactory.getCurrentSession().createQuery("From Product p where p.category.active=:active").setParameter("active",true).list();
     }
 
     public List<Product> getProductByCategory(int id) {
 
-        return sessionFactory.getCurrentSession().createNativeQuery("SELECT p.p_id,p.p_name,p.p_active,p.p_description,p.p_image,p.p_price,p.p_quantity,p.p_views,p.c_id FROM ecommerce_product p INNER JOIN ecommerce_category c ON p.p_id=c.c_id ").addEntity(Product.class).list();
+        return sessionFactory.getCurrentSession().createQuery("From Product p WHERE p.category.cid=:cid AND p.active=:active").setParameter("cid",id).setParameter("active",true).list();
+    }
+
+    public Product getProductByProductId(int id) {
+        return (Product) sessionFactory.getCurrentSession().createQuery("From Product p Where p.pid=:pid AND p.active=:active").setParameter("pid",id).setParameter("active",true).uniqueResult();
+    }
+
+    public void updateProduct(Product product) {
+        sessionFactory.getCurrentSession().update(product);
     }
 
     public void insert(Product product){

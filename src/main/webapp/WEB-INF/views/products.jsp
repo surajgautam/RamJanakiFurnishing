@@ -95,8 +95,11 @@
                         <thead>
 
                         <tr>
-                            <th>ID</th>
+                            <th></th>
                             <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th></th>
                         </tr>
 
 
