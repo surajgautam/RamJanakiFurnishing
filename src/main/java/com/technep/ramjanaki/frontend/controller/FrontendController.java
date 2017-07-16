@@ -123,4 +123,13 @@ public class FrontendController {
         return modelAndView;
 
     }
+
+    @RequestMapping(value = {"/esewatest"}, method = RequestMethod.GET)
+    public ModelAndView returnEsewa() {
+        ModelAndView modelAndView = new ModelAndView("index");
+        modelAndView.addObject("esewaTest", true);
+        modelAndView.addObject("title", "About Us");
+        return modelAndView;
+
+    }
 }

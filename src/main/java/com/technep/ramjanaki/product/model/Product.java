@@ -2,8 +2,16 @@ package com.technep.ramjanaki.product.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.technep.ramjanaki.category.model.Category;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.SafeHtml;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 /**
  * Created by surajgautam on 6/25/17.
@@ -17,12 +25,18 @@ public class Product {
     private int pid;
 
     @Column(name="p_name",nullable = false)
+    @Size(min = 3,max = 30)
+    @NotBlank
+    @SafeHtml(whitelistType = SafeHtml.WhiteListType.BASIC)
     private String pname;
 
     @Column(name="p_price",nullable = false)
+    @NotNull(message = "Price must not be null")
     private long price;
 
     @Column(name="p_description",nullable = false)
+    @NotBlank
+    @SafeHtml(whitelistType = SafeHtml.WhiteListType.BASIC)
     private String description;
 
     @Column(name="p_image")
@@ -127,6 +141,7 @@ public class Product {
                 ", active=" + active +
                 ", views=" + views +
                 ", quantity=" + quantity +
+                ", category=" + category +
                 '}';
     }
 }

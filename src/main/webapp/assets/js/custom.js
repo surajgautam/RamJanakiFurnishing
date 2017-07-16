@@ -36,6 +36,11 @@ $(function(){
 
     }
 
+
+    $(".alert-success").fadeTo(3000, 500).slideUp(500, function(){
+        $(".alert-success").slideUp(500);
+    });
+
     //code for jquery data table
 
     var $table = $('#productListTable');
@@ -93,4 +98,5 @@ $(function(){
         });
 
     }
+
 });

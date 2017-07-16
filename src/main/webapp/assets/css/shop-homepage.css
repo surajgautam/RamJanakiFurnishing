@@ -73,3 +73,7 @@ footer {
     bottom: 15px;
     height: 30px;
 }
+.errorText{
+    color:red;
+    font-style: italic;
+}

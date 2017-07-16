@@ -16,6 +16,9 @@ public interface ProductService {
     Product getProductByProductId(int id);
 
     void updateProduct(Product product);
+    List<Product> getAllProducts();
+
+    void insertProduct(Product product);
 
 
 

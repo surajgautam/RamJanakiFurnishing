@@ -41,7 +41,7 @@ public class GlobalExceptionHandler {
 
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("errorTitle","Illegal Request");
-        modelAndView.addObject("errorDescription",ex.getMessage());
+        modelAndView.addObject("errorDescription","Please enter related numbers not string");
         modelAndView.addObject("title","Error");
         modelAndView.addObject("userErrorStatus",true);
         return modelAndView;

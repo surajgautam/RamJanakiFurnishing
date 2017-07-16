@@ -9,6 +9,8 @@ import java.util.List;
  */
 public interface ProductDao {
 
+    List<Product> getAllProducts();
+
     List<Product> getActiveProducts();
 
     List<Product> getProductByCategory(int id);
@@ -16,5 +18,7 @@ public interface ProductDao {
     Product getProductByProductId(int id);
 
      void updateProduct(Product product);
+
+    void insertProduct(Product product);
 
 }

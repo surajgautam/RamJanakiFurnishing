@@ -34,4 +34,12 @@ public class ProductServiceImpl implements ProductService {
     public void updateProduct(Product product) {
         productDao.updateProduct(product);
     }
+
+    public List<Product> getAllProducts() {
+        return productDao.getAllProducts();
+    }
+
+    public void insertProduct(Product product) {
+        productDao.insertProduct(product);
+    }
 }

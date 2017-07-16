@@ -115,11 +115,15 @@
                         </div>
                     </c:if>
                     <c:if test="${editCategory == true}">
-                        <%@include file="edit-category.jsp"%>
+                        <%@include file="category/edit-category.jsp"%>
                     </c:if>
 
                     <c:if test="${addCategory == true}">
-                        <%@include file="add-category.jsp"%>
+                        <%@include file="category/add-category.jsp"%>
+                    </c:if>
+
+                    <c:if test="${productsClicked == true}">
+                        <%@include file="product/addproduct.jsp"%>
                     </c:if>
 
                 </div>

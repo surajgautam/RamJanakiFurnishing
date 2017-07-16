@@ -18,6 +18,10 @@ public class ProductDaoImpl implements ProductDao {
     private SessionFactory sessionFactory;
 
 
+    public List<Product> getAllProducts() {
+        return sessionFactory.getCurrentSession().createQuery("From Products p").list();
+    }
+
     public List<Product> getActiveProducts() {
         return sessionFactory.getCurrentSession().createQuery("From Product p where p.category.active=:active").setParameter("active",true).list();
     }
@@ -35,7 +39,7 @@ public class ProductDaoImpl implements ProductDao {
         sessionFactory.getCurrentSession().update(product);
     }
 
-    public void insert(Product product){
+    public void insertProduct(Product product){
 
          sessionFactory.getCurrentSession().save(product);
 

@@ -87,6 +87,10 @@
         <c:if test="${userErrorStatus == true}">
             <%@ include file="errorpage.jsp" %>
         </c:if>
+
+        <c:if test="${esewaTest ==true}">
+            <%@include file="esewatest.jsp"%>
+        </c:if>
     </div>
 
 
@@ -112,6 +116,9 @@
 
     <!--Custom js -->
     <script src = "<c:url value="/resources/js/custom.js" />"></script>
+
+    <!--Recaptcha js -->
+    <script src = "<c:url value="/resources/js/recaptcha.js" />"></script>
 
 
 

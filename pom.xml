@@ -21,10 +21,43 @@
         <junit>4.12</junit>
         <jackson>2.8.8</jackson>
         <servlet-api>3.1.0</servlet-api>
+        <jsoup>1.7.2</jsoup>
+        <validator-api>1.1.0.Final</validator-api>
+        <hibernate-validator>5.2.1.Final</hibernate-validator>
     </properties>
 
 
     <dependencies>
+
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>${jsoup}</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${validator-api}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator}</version>
+        </dependency>
+
+
+
 
         <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
         <dependency>
@@ -141,7 +174,12 @@
             <version>${log4j}</version>
         </dependency>
 
-
+        <!-- https://mvnrepository.com/artifact/net.tanesha.recaptcha4j/recaptcha4j -->
+        <dependency>
+            <groupId>net.tanesha.recaptcha4j</groupId>
+            <artifactId>recaptcha4j</artifactId>
+            <version>0.0.7</version>
+        </dependency>
 
 
     </dependencies>
