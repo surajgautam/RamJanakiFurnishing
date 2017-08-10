@@ -1,6 +1,8 @@
 package com.technep.ramjanaki.admin.controller;
 
 import com.sun.org.apache.xpath.internal.operations.Mod;
+import com.technep.ramjanaki.admin.service.ImageToStringLocation;
+import com.technep.ramjanaki.category.model.Category;
 import com.technep.ramjanaki.category.service.CategoryService;
 import com.technep.ramjanaki.product.model.Product;
 import com.technep.ramjanaki.product.service.ProductService;
@@ -10,13 +12,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -30,6 +32,19 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private CategoryService categoryService;
+
+    @Autowired
+    private ImageToStringLocation imageToStringLocation;
+
+
+    //modelAttribute for categories
+    @ModelAttribute("categories")
+    public List<Category> getCategories(){
+        return categoryService.getAllCategories();
+    }
 
     //show product page
     @RequestMapping(value = "/products")
@@ -50,7 +65,7 @@ public class ProductController {
 
     //form post request
     @RequestMapping(value = "/add/product", method = RequestMethod.POST)
-    public String processForm(@Valid @ModelAttribute("product") Product product, BindingResult bindingResult, Model model) {
+    public String processForm(@Valid @ModelAttribute("product") Product product, BindingResult bindingResult, Model model) throws IOException {
         ModelAndView modelAndView = null;
         logger.info("********************************************************");
 
@@ -61,6 +76,9 @@ public class ProductController {
             return "admin/admin";
         } else {
             if (product != null) {
+                logger.info(product);
+                //getting image from form and then saving it and storing image location in db
+                product.setImage(imageToStringLocation.writeFile(product.getFile()));
                 productService.insertProduct(product);
             }
 

@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.SafeHtml;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -28,6 +29,7 @@ public class Product {
     @Size(min = 3,max = 30)
     @NotBlank
     @SafeHtml(whitelistType = SafeHtml.WhiteListType.BASIC)
+    @Pattern(regexp = "^[a-zA-Z0-9 ]+$")
     private String pname;
 
     @Column(name="p_price",nullable = false)
@@ -50,6 +52,10 @@ public class Product {
 
     @Column(name="p_quantity")
     private int quantity;
+
+
+    @Transient
+    private MultipartFile file;
 
 
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
@@ -128,6 +134,14 @@ public class Product {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    public void setFile(MultipartFile file) {
+        this.file = file;
     }
 
     @Override

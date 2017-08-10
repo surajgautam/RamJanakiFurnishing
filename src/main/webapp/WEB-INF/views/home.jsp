@@ -30,19 +30,19 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img class="slide-image" src="<c:url value="/resources/images/slider/slider.jpg" />" alt="slider 1">
+                                <img class="slide-image" src="<c:url value="/resources/images/slider.jpg" />" alt="slider 1">
                             </div>
                             <div class="item">
-                                <img class="slide-image" src="<c:url value="/resources/images/slider/slider2.jpg" />" alt="slider 2">
+                                <img class="slide-image" src="<c:url value="/resources/images/slider2.jpg" />" alt="slider 2">
                             </div>
                             <div class="item">
-                                <img class="slide-image" src="<c:url value="/resources/images/slider/slider3.jpg" />" alt="slider 3">
+                                <img class="slide-image" src="<c:url value="/resources/images/slider3.jpg" />" alt="slider 3">
                             </div>
                             <div class="item">
-                                <img class="slide-image" src="<c:url value="/resources/images/slider/slider4.jpg" />" alt="slider 4">
+                                <img class="slide-image" src="<c:url value="/resources/images/slider4.jpg" />" alt="slider 4">
                             </div>
                             <div class="item">
-                                <img class="slide-image" src="<c:url value="/resources/images/slider/slider5.jpg" />" alt="slider 4">
+                                <img class="slide-image" src="<c:url value="/resources/images/slider5.jpg" />" alt="slider 4">
                             </div>
                         </div>
                         <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">

@@ -32,7 +32,7 @@
                 </div>
                 <div class="panel-body">
                     <forms:errors path="product.*" cssClass="errorText"/>
-                    <form class="form-horizontal" method="post" action="${site_url}/admin/add/product">
+                    <form class="form-horizontal" method="post" action="${site_url}/admin/add/product" enctype="multipart/form-data">
                         <div class="form-group">
                             <label>Product Name:</label>
                             <input type="text" class="form-control" placeholder="Enter Product Name" name="pname"/>
@@ -57,12 +57,20 @@
 
                         <div class="form-group">
                             <label>Product Image:</label>
-                            <input type="file" class="form-control" placeholder="Enter Product Quantity" name=""/>
+                            <input type="file" class="form-control" placeholder="Enter Product Quantity" name="file" accept=".jpg,.jpeg,.png"/>
                         </div>
 
                         <div class="form-group">
                             <label>Select Category:</label>
-                            <select type="form-control">
+
+                            <select class="form-control" name="category.cid">
+                                <c:if test="${not empty categories}">
+                                    <c:forEach items="${categories}" var="cat">
+                                    <option value="${cat.cid}">${cat.cname}</option>
+                                </c:forEach>
+                                </c:if>
+
+
 
                             </select>
                         </div>
