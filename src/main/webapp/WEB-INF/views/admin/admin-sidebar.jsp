@@ -10,7 +10,7 @@
 <div class="list-group">
     <a href="${site_url}/admin/categories" class="list-group-item">Categories</a>
     <a href="${site_url}/admin/products" class="list-group-item">Products</a>
-    <a href="#" class="list-group-item">Slider</a>
+    <a href="${site_url}/admin/slider" class="list-group-item">Slider</a>
     <a href="#" class="list-group-item">Users</a>
     <a href="#" class="list-group-item">Reviews</a>
     <a href="#" class="list-group-item">Bar Diagram</a>

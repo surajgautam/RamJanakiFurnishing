@@ -27,7 +27,7 @@ public class ImageToStringLocation {
         File file1 = new File(PATH+fileName);
 
 
-        String originalFileName= PATH.split("webapp")[1];
+        String originalFileName= PATH.split("assets")[1];
         System.out.println(originalFileName);
 
 
@@ -35,7 +35,7 @@ public class ImageToStringLocation {
         bufferedOutputStream.write(bytes);
         bufferedOutputStream.close();
 
-        return "resources/"+ originalFileName + fileName;
+        return "/resources"+ originalFileName + fileName+"/";
     }
 
 

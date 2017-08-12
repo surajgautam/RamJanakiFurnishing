@@ -26,7 +26,7 @@ public class Product {
     private int pid;
 
     @Column(name="p_name",nullable = false)
-    @Size(min = 3,max = 30)
+    @Size(min = 3,max = 1000)
     @NotBlank
     @SafeHtml(whitelistType = SafeHtml.WhiteListType.BASIC)
     @Pattern(regexp = "^[a-zA-Z0-9 ]+$")
@@ -41,7 +41,7 @@ public class Product {
     @SafeHtml(whitelistType = SafeHtml.WhiteListType.BASIC)
     private String description;
 
-    @Column(name="p_image")
+    @Column(name="p_image",length = 100000)
     private String image;
 
     @Column(name="p_active")
@@ -58,7 +58,7 @@ public class Product {
     private MultipartFile file;
 
 
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @ManyToOne
     @JsonBackReference
     @JoinColumn(name = "c_id")
     private Category category;

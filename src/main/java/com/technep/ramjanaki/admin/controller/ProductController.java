@@ -65,7 +65,7 @@ public class ProductController {
 
     //form post request
     @RequestMapping(value = "/add/product", method = RequestMethod.POST)
-    public String processForm(@Valid @ModelAttribute("product") Product product, BindingResult bindingResult, Model model) throws IOException {
+    public String processForm(@Valid @ModelAttribute("product") Product product, BindingResult bindingResult, Model model,HttpServletRequest request) throws IOException {
         ModelAndView modelAndView = null;
         logger.info("********************************************************");
 

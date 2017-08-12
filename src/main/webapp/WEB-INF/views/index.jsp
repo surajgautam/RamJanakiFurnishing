@@ -19,13 +19,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>R J- ${title}</title>
+    <title>${title}</title>
 
     <script>
         window.menu = '${title}';
         window.siteURL='${site_url}';
     </script>
 
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAMNmunnnY1G90k5bCoPuxdb7SLgQfZE3mc-QdkkxvGRM6bLKZeV2fdQ"/>
     <!-- Bootstrap Core CSS -->
     <link href="<c:url value="/resources/css/bootstrap.min.css"/> " rel="stylesheet">
 
@@ -48,6 +49,16 @@
 </head>
 
 <body>
+<!-- for subscribe-->
+
+
+<c:if test="${not empty subscribeMessage}">
+        <div class="alert alert-success alert-dismissable" id="subscibe-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            ${subscribeMessage}
+    </div>
+</c:if>
+
 
 <div class="wrapper">
     <!-- Navigation -->
@@ -91,8 +102,20 @@
         <c:if test="${esewaTest ==true}">
             <%@include file="esewatest.jsp"%>
         </c:if>
-    </div>
 
+        <c:if test="${userHome == true}">
+        <center>
+            <form action="${site_url}/subscribe/newsletter" method="post">
+                <div class="form-group">
+                    <forms:errors path="email" cssClass="errorText"/>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required/>
+                    <input type="submit" id="subscribeBtn" class="btn btn-primary" value="Subscribe"/>
+                </div>
+            </form>
+        </center>
+        </c:if>
+
+    </div>
 
 
         <hr>
@@ -107,7 +130,7 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 
-    <!--Data Table-->
+    <!--Data Table-->oca
     <script src="<c:url value="/resources/js/jquery.dataTables.js" />"></script>
 
     <!--Data Table js -->
@@ -119,7 +142,36 @@
 
     <!--Recaptcha js -->
     <script src = "<c:url value="/resources/js/recaptcha.js" />"></script>
+<%--
 
+    <script>
+
+        //jqeury ajax call for subscribe newsletter
+        $(document).ready(function(){
+
+            $('#subscribeBtn').click(function(){
+
+                var email = $('#email').val();
+                $.ajax({
+                   url: '${site_url}/subscribe/newsletter',
+                    method:'POST',
+                    contentType:"application/json",
+                    data: JSON.stringify(email)
+                }).done(function (data) {
+                    $('#subscibe-success').show();
+                    setTimeout(function(){
+                        $('#subscibe-success').hide();
+                    },5000);
+                });
+
+                console.log("Clicked")
+            });
+
+
+        });
+
+    </script>
+--%>
 
 
 

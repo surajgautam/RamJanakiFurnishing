@@ -8,6 +8,7 @@ import com.technep.ramjanaki.product.service.ProductService;
 import org.apache.taglibs.standard.lang.jstl.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,15 +27,22 @@ public class FrontendController {
     private ProductService productService;
 
     @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
-    public ModelAndView returnIndexPage() {
+    public ModelAndView returnIndexPage(@RequestParam(name="action",required = false) String action) {
         ModelAndView modelAndView = new ModelAndView("index");
         List<Category> allCategories = categoryService.getActiveCategories();
         //checking if list of categories is null or not
         if (allCategories != null) {
             modelAndView.addObject("categories", allCategories);
         }
+
+        //if subscribed
+        if(action!=null){
+            if(action.equals("subscribe")){
+                modelAndView.addObject("subscribeMessage","Thank you for subscribing to Ram Janaki Furnishing").addObject("userHome",true);
+            }
+        }
         modelAndView.addObject("userHome", true);
-        modelAndView.addObject("title", "Home");
+        modelAndView.addObject("title", "RamJanaki.com");
 
         return modelAndView;
 

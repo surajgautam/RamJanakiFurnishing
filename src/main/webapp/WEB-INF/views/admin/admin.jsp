@@ -26,6 +26,8 @@
         window.siteURL='${site_url}';
     </script>
 
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAMNmunnnY1G90k5bCoPuxdb7SLgQfZE3mc-QdkkxvGRM6bLKZeV2fdQ"/>
+
     <!-- Bootstrap Core CSS -->
     <link href="<c:url value="/resources/css/bootstrap.min.css"/> " rel="stylesheet">
 
@@ -124,6 +126,10 @@
 
                     <c:if test="${productsClicked == true}">
                         <%@include file="product/addproduct.jsp"%>
+                    </c:if>
+
+                    <c:if test="${sliderClicked == true}">
+                        <%@include file="slider.jsp"%>
                     </c:if>
 
                 </div>

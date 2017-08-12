@@ -47,6 +47,8 @@
             <array>
                 <value>com.technep.ramjanaki.category.model</value>
                 <value>com.technep.ramjanaki.product.model</value>
+                <value>com.technep.ramjanaki.admin.model</value>
+                <value>com.technep.ramjanaki.subscribe.model</value>
             </array>
 
         </property>
@@ -62,10 +64,33 @@
 
     <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
+
     </bean>
+<!--
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <value>classpath:application.properties</value>
+        </property>
+    </bean>-->
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 
+    </bean>
+
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.gmail.com"/>
+        <property name="port" value="587"/>
+        <property name="username" value="teamwarrior20@gmail.com "/>
+        <property name="password" value="9813812988suraz1"/>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.use_sql_comments">true</prop>
+            </props>
+        </property>
     </bean>
 
 </beans>

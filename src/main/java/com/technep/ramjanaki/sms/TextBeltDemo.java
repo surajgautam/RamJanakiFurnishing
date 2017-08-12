@@ -1,4 +1,8 @@
-package com.technep.ramjanaki;
+package com.technep.ramjanaki.sms;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -8,8 +12,12 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 
+@PropertySource("classpath:application.properties")
 public class TextBeltDemo {
-    public static String sendSms() {
+
+    @Value(value = "${sms.apikey}")
+    public static String apiKey;
+   /* public static String sendSms() {
         try {
 
 //            http://api.txtlocal.com/docs/sendsms
@@ -39,9 +47,10 @@ public class TextBeltDemo {
             System.out.println("Error SMS "+e);
             return "Error "+e;
         }
-    }
+    }*/
 
     public static void main(String[] args) {
-        System.out.println(sendSms());
+        /*System.out.println(sendSms());*/
+        System.out.println(apiKey);
     }
 }
