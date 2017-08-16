@@ -132,6 +132,10 @@
                         <%@include file="slider.jsp"%>
                     </c:if>
 
+                    <c:if test="${subscribe == true}">
+                        <%@include file="subscriber.jsp"%>
+                    </c:if>
+
                 </div>
 
 

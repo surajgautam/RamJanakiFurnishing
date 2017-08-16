@@ -19,10 +19,10 @@ public class MailSenderServiceImpl implements MailSenderService {
 
     @Autowired private JavaMailSenderImpl mailSender;
 
-    public void sendMail(String from, String to, String subject, String message) throws MessagingException {
+    public void sendMail(String to, String subject, String message) throws MessagingException {
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage,true);
-        mimeMessageHelper.setFrom(from);
+//        mimeMessageHelper.setFrom(from);
         mimeMessageHelper.setTo(to);
         mimeMessageHelper.setSubject(subject);
         mimeMessageHelper.setText(message);

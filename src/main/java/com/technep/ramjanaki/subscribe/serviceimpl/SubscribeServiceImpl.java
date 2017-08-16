@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created by surajgautam on 8/12/17.
  */
@@ -17,5 +19,13 @@ public class SubscribeServiceImpl implements SubscribeService{
 
     public void saveSubscriber(Subscribe subscribe) {
         subscribeDao.saveSubscriber(subscribe);
+    }
+
+    public List<Subscribe> getAllActiveSubscribersByEmail() {
+       return subscribeDao.getAllActiveSubscribersByEmail();
+    }
+
+    public void updateStatus(String email) {
+        subscribeDao.updateStatus(email);
     }
 }

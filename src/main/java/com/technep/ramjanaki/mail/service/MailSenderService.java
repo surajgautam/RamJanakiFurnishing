@@ -7,5 +7,5 @@ import javax.mail.MessagingException;
  */
 public interface MailSenderService {
 
-    public void sendMail(String from, String to, String subject, String message) throws MessagingException;
+    public void sendMail(String to, String subject, String message) throws MessagingException;
 }

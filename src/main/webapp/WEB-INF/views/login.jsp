@@ -29,18 +29,9 @@
             <button type="button" class="btn btn-primary">Login</button>
         </div>
     </div>
-
+</form>
 </div>
 
 
-
-
-
-
-
-
-
-
-</form>
 
 

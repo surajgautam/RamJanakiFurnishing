@@ -1,0 +1,72 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>RamJanaki </title>
+</head>
+<body>
+<div style="width: 1000px;padding: 0 15px;">
+    <div style="width: 500px; height:700px;margin: auto;">
+        <div class="mail-header" style="height: 60px;width: 100%;background-color:#fff;margin-bottom: 15px; border-bottom: 2px solid #ddd;">
+            <a href="http://vettyo.com/" target="_blank"><div class="header-logo" style="width: 30%;float: left; height: 100%;position: relative;">
+                <img src="http://asterdio.com/vettyo-img/vettyo-logo-alt2.png" style="position: absolute;top: 0;left: 0;right: 0;bottom: 0;margin: auto;">
+            </div></a>
+            <div class="header-social-nav" style="width: 70%;height: 100%; float: right;">
+                <ul style="padding: 0;margin: 0; list-style-type: none;text-align: right;line-height: 5;">
+                    <li style="display: inline-block;margin-right: 15px;"><a href="https://www.facebook.com/vettyo/" target="_blank"><img src="http://asterdio.com/vettyo-img/facebook-logo.png"></a></li>
+                    <li style="display: inline-block;margin-right: 15px;"><a href="#" target="_blank"></a><img src="http://asterdio.com/vettyo-img/twitter-logo.png"></li>
+                    <li style="display: inline-block;margin-right: 15px;"><a href="#" target="_blank"><img src="http://asterdio.com/vettyo-img/google-plus-logo.png"></a></li>
+                    <li style="display: inline-block;margin-right: 15px;"><a href="#" target="_blank"></a><img src="http://asterdio.com/vettyo-img/icon.png"></li>
+                    <li style="display: inline-block;margin-right: 15px;"><a href="#" target="_blank"><img src="http://asterdio.com/vettyo-img/linkedin-logo.png"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="product" style="height: 450px;background-color: #fff; margin-bottom: 15px; border-bottom: 2px solid #ddd;">
+            <div class="product-img" style="height: 350px;position: relative;">
+                <a href="#"><img src="https://des.gearbest.com/uploads/pdm-desc-pic/Electronic/image/2017/04/17/20170417174430_71715.jpg" style="height: 100%; width: auto; max-width:100%;position: absolute;top: 0;bottom: 0;left: 0;right: 0;margin: auto;"></a>
+            </div>
+            <div class="product-desc" style="height: 100px;padding:10px 15px;">
+                <strong>MI Redmi 4X</strong>
+                <p>Description Goes Here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam minima non atque nemo distinctio vel!</p>
+            </div>
+        </div>
+        <div class="vettyo-promotion" style="height: 100px; margin-bottom: 15px;border-bottom: 2px solid #ddd;padding-bottom: 15px;">
+            <div style="background-image: url('http://asterdio.com/vettyo-img/user-bg.jpg'); color: #ddd;height: 100px; padding: 0 15px;">
+                <h2 style="padding-top: 20px;">For More Exciting Products Please Visit <a href="http://vettyo.com/" style="color: #fff;">Vettyo.com</a></h2>
+            </div>
+        </div>
+        <div class="suggested" style="height: 250px;width: 100%;margin-bottom: 15px;border-bottom: 2px solid #ddd;padding-bottom: 15px;">
+            <h4 style="background-color: #F6511D;color: #fff;padding: 10px;">Recomended Products</h4>
+            <a href="#" target="_blank"><div class="suggested-ad" style="width: 27.33%;height:100%;float: left;padding: 0 15px;">
+                <div class="suggested-ad-pic" style="width: 100%;height: 150px;position: relative;">
+                    <img src="http://i-cdn.phonearena.com/images/article/94572-thumb/Samsung-to-rollout-Galaxy-S8S8-Bluetooth-connectivity-and-stability-fix-to-more-countries-soon.jpg" style="height: 100%;width: auto;max-width: 100%;position: absolute;top: 0;bottom: 0;left: 0;right: 0;margin: auto;">
+                </div>
+                <div class="suggested-ad-desc" style="width: 100%;height: 50px;padding: 10 15px;">
+                    <strong style="color:#333;">Samsung S8</strong>
+                </div>
+            </div></a>
+            <a href="#" target="_blank"><div class="suggested-ad" style="width: 27.33%;height:100%;float: left;padding: 0 15px;">
+                <div class="suggested-ad-pic" style="width: 100%;height: 150px;position: relative;">
+                    <img src="http://i-cdn.phonearena.com/images/article/94572-thumb/Samsung-to-rollout-Galaxy-S8S8-Bluetooth-connectivity-and-stability-fix-to-more-countries-soon.jpg" style="height: 100%;width: auto;max-width: 100%;position: absolute;top: 0;bottom: 0;left: 0;right: 0;margin: auto;">
+                </div>
+                <div class="suggested-ad-desc" style="width: 100%;height: 50px;padding: 10 15px;">
+                    <strong style="color:#333;">Samsung S8</strong>
+                </div>
+            </div></a>
+            <a href="#" target="_blank"><div class="suggested-ad" style="width: 27.33%;height:100%;float: right;padding: 0 15px;">
+                <div class="suggested-ad-pic" style="width: 100%;height: 150px;position: relative;">
+                    <img src="http://i-cdn.phonearena.com/images/article/94572-thumb/Samsung-to-rollout-Galaxy-S8S8-Bluetooth-connectivity-and-stability-fix-to-more-countries-soon.jpg" style="height: 100%;width: auto;max-width: 100%;position: absolute;top: 0;bottom: 0;left: 0;right: 0;margin: auto;">
+                </div>
+                <div class="suggested-ad-desc" style="width: 100%;height: 50px;padding: 10 15px;">
+                    <strong style="color:#333;">Samsung S8</strong>
+                </div>
+            </div></a>
+        </div>
+        <div class="footer">
+            <p style="font-size: 12px;">You are receiving this email from Vettyo.com. You can always unsubscribe. Click <a href="#">here</a> to unsubscribe.</p>
+            <center style="background-color: #F6511D;color: #fff;padding: 5px 0;">&copy; www.vettyo.com</center>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -15,9 +15,9 @@ import java.net.URLEncoder;
 @PropertySource("classpath:application.properties")
 public class TextBeltDemo {
 
-    @Value(value = "${sms.apikey}")
+  /*  @Value(value = "${sms.apikey}")
     public static String apiKey;
-   /* public static String sendSms() {
+    public static String sendSms() {
         try {
 
 //            http://api.txtlocal.com/docs/sendsms
@@ -47,10 +47,10 @@ public class TextBeltDemo {
             System.out.println("Error SMS "+e);
             return "Error "+e;
         }
-    }*/
+    }
 
     public static void main(String[] args) {
-        /*System.out.println(sendSms());*/
+        System.out.println(sendSms());
         System.out.println(apiKey);
-    }
+    }*/
 }
