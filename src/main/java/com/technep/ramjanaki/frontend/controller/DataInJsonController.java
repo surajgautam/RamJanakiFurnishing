@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -22,8 +23,8 @@ public class DataInJsonController {
 
     @RequestMapping(value = "/get/all/products")
     @ResponseBody
-    public List<Product> getProducts() throws ProductNotFoundException {
-
+    public List<Product> getProducts(HttpServletResponse response) throws ProductNotFoundException {
+        response.setHeader("Access-Control-Allow-Origin","*");
         List<Product> allProducts = productService.getActiveProducts();
         if(allProducts==null){
             throw new ProductNotFoundException("The product you are looking for doesn't exist");
