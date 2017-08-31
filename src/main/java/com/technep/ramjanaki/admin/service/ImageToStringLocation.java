@@ -22,7 +22,7 @@ public class ImageToStringLocation {
 
     public String writeFile(MultipartFile file) throws IOException {
         byte[] bytes = file.getBytes();
-        String PATH = "/home/surajgautam/Desktop/RamJanakiFurnishing/src/main/webapp/assets/images/";
+        String PATH = "/home/surajgautam/projects/RamJanakiFurnishing/src/main/webapp/assets/images/";
         String fileName = file.getOriginalFilename();
         File file1 = new File(PATH+fileName);
 

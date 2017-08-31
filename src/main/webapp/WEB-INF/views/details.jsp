@@ -43,8 +43,19 @@
             <h6>Quantity:</h6><strong>${product.quantity}</strong>
 
             <h6>Views:</h6><strong>${product.views}</strong> <br/>
-            <a href="<c:url value="/cart/add/${product.pid}/product"/> " class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart">Add To Cart</span></a>
-            <a href="<c:url value="/show/products"/> " class="btn btn-success">Back</a>
+            <form action="http://dev.esewa.com.np/epay/main" method="POST">
+                <input value="${product.price}" name="amt" type="hidden">
+                <input value="${product.price * 0.10}" name="txAmt" type="hidden">
+                <input value="0" name="psc" type="hidden">
+                <input value="0" name="pdc" type="hidden">
+                <input value="${product.price + product.price * 0.10}" name="tAmt" type="hidden">
+                <input value="college_test" name="scd" type="hidden">
+                <input value="XYZ-1234" name="pid" type="hidden">
+                <input value="http://localhost:8080/ecommerce/payment?action=su" type="hidden" name="su">
+                <input value="http://localhost:8080/ecommerce/payment?action=fu" type="hidden" name="fu">
+                <input  class="btn btn-success" value="Checkout using Esewa" type="submit">
+                <a href="<c:url value="/show/products"/> " class="btn btn-success">Back</a>
+            </form>
 
         </div>
 

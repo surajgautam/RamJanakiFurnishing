@@ -26,6 +26,7 @@
         window.siteURL='${site_url}';
     </script>
 
+
     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAMNmunnnY1G90k5bCoPuxdb7SLgQfZE3mc-QdkkxvGRM6bLKZeV2fdQ"/>
 
     <!-- Bootstrap Core CSS -->

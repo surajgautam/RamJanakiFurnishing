@@ -14,7 +14,7 @@
     <input value="3" name="pdc" type="hidden">
     <input value="college_test" name="scd" type="hidden">
     <input value="XYZ-1234" name="pid" type="hidden">
-    <input value="http://localhost:8080/ecommerce/" type="hidden" name="su">
-    <input value="http://abc.com/failure.html?q=fu" type="hidden" name="fu">
+    <input value="http://localhost:8080/ecommerce/payment?action=su" type="hidden" name="su">
+    <input value="http://localhost:8080/ecommerce/payment?action=fu" type="hidden" name="fu">
     <input value="Submit" type="submit">
 </form>

@@ -90,7 +90,6 @@ $(function(){
                     mRender:function(data,type,row){
                         var str='';
                         str+= '<a href="'+window.siteURL+'/show/'+data+'/product" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a> ';
-                        str+= '<a href="'+window.siteURL+'/show/'+data+'/product" class="btn btn-danger"><span class="glyphicon glyphicon-shopping-cart"></span></a> ';
                         return str;
                     }
                 }

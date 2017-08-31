@@ -44,6 +44,17 @@
                     <a href="${site_url}/admin/manage">Admin Panel</a>
                 </li>
 
+                <c:if test="${sessionScope.userName != null}">
+
+                    <li id="name">
+                      <a href="#"> Welcome ${sessionScope.userName}!!!</a>
+                    </li>
+
+                <li id="logout">
+                    <a href="${site_url}/logout">Logout</a>
+                </li>
+                </c:if>
+
             </ul>
         </div>
         <!-- /.navbar-collapse -->

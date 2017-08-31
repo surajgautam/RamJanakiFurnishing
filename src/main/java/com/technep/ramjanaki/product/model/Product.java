@@ -36,7 +36,7 @@ public class Product {
     @NotNull(message = "Price must not be null")
     private long price;
 
-    @Column(name="p_description",nullable = false)
+    @Column(name="p_description",nullable = false,length = 1000000)
     @NotBlank
     @SafeHtml(whitelistType = SafeHtml.WhiteListType.BASIC)
     private String description;

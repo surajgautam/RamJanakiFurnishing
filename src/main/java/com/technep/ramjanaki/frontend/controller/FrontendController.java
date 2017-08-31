@@ -30,6 +30,8 @@ public class FrontendController {
     public ModelAndView returnIndexPage(@RequestParam(name="action",required = false) String action) {
         ModelAndView modelAndView = new ModelAndView("index");
         List<Category> allCategories = categoryService.getActiveCategories();
+
+        List<Product> activeProducts = productService.getActiveProducts();
         //checking if list of categories is null or not
         if (allCategories != null) {
             modelAndView.addObject("categories", allCategories);
@@ -43,7 +45,7 @@ public class FrontendController {
         }
         modelAndView.addObject("userHome", true);
         modelAndView.addObject("title", "RamJanaki.com");
-
+        modelAndView.addObject("products",activeProducts);
         return modelAndView;
 
     }
@@ -71,6 +73,15 @@ public class FrontendController {
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("userLogin", true);
         modelAndView.addObject("title", "Login");
+        return modelAndView;
+
+    }
+
+    @RequestMapping(value = {"/signup"}, method = RequestMethod.GET)
+    public ModelAndView returnSignup() {
+        ModelAndView modelAndView = new ModelAndView("index");
+        modelAndView.addObject("userSignup", true);
+        modelAndView.addObject("title", "Signup");
         return modelAndView;
 
     }

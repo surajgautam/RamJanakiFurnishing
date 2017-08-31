@@ -51,6 +51,8 @@
                 <value>com.technep.ramjanaki.product.model</value>
                 <value>com.technep.ramjanaki.admin.model</value>
                 <value>com.technep.ramjanaki.subscribe.model</value>
+                <value>com.technep.ramjanaki.login.model</value>
+                <value>com.technep.ramjanaki.payment.model</value>
             </array>
 
         </property>

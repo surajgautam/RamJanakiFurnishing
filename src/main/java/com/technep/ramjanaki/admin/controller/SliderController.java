@@ -14,8 +14,7 @@ public class SliderController {
 
     @RequestMapping(value = "/slider")
     public ModelAndView showSliderJsp(){
-
-        return new ModelAndView("admin/slider").addObject("sliderClicked",true);
+        return new ModelAndView("admin/admin").addObject("sliderClicked",true);
     }
 
 

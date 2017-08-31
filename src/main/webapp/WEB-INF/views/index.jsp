@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <c:set value="${pageContext.request.contextPath}" var="site_url"/>
 
-<html lang="en">
+<html lang="en" ng-app="RamJanakiApp">
 
 <head>
 
@@ -21,10 +21,13 @@
 
     <title>${title}</title>
 
+    <script src="<c:url value="/resources/lib/angular-min.js"/>"></script>
+
     <script>
         window.menu = '${title}';
         window.siteURL='${site_url}';
     </script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAMNmunnnY1G90k5bCoPuxdb7SLgQfZE3mc-QdkkxvGRM6bLKZeV2fdQ"/>
     <!-- Bootstrap Core CSS -->
@@ -103,6 +106,20 @@
             <%@include file="esewatest.jsp"%>
         </c:if>
 
+        <c:if test="${userSignup == true}">
+            <%@ include file="signup.jsp" %>
+        </c:if>
+
+        <c:if test="${payment == true}">
+            <%@include file="payment.jsp"%>
+        </c:if>
+
+        <c:if test="${signupSuccessful == true}">
+            <%@include file="login.jsp"%>
+        </c:if>
+        
+
+
         <c:if test="${userHome == true}">
         <center>
             <form action="${site_url}/subscribe/newsletter" method="post">
@@ -130,18 +147,22 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 
-    <!--Data Table-->oca
+    <!--Data Table-->
     <script src="<c:url value="/resources/js/jquery.dataTables.js" />"></script>
 
     <!--Data Table js -->
     <script src="<c:url value="/resources/js/dataTables.bootstrap.js" />"></script>
 
+    <%--<!--Recaptcha js -->
+    <script src = "<c:url value="/resources/js/recaptcha.js" />"></script>--%>
 
     <!--Custom js -->
     <script src = "<c:url value="/resources/js/custom.js" />"></script>
 
-    <!--Recaptcha js -->
-    <script src = "<c:url value="/resources/js/recaptcha.js" />"></script>
+    <script src="<c:url value="/resources/app.js" />"> </script>
+    <script src="<c:url value="/resources/controllers/signupformvalidationcontroller.js" />"> </script>
+    <script src="<c:url value="/resources/services/signupservice.js" />"> </script>
+
 <%--
 
     <script>
