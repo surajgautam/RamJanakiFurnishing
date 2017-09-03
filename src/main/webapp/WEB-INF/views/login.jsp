@@ -23,14 +23,14 @@
         <div class="col-sm-offset-3 col-sm-6">
             <div class="form-group">
                 <label>Username :</label>
-                <input type="input" class="form-control" name="userName" placeholder="Enter your username" />
+                <input type="input" class="form-control" name="userName" placeholder="Enter your username" required/>
 
             </div>
 
             <div class="form-group">
 
                 <label>Password :</label>
-                <input type="password" class="form-control" name="password" placeholder="Enter your password" />
+                <input type="password" class="form-control" name="password" placeholder="Enter your password" required/>
             </div>
 
 

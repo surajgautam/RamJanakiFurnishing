@@ -19,4 +19,8 @@ public class LoginServiceImpl implements LoginService {
 
     }
 
+    public boolean isuserExists(String userName) {
+        return loginDao.isuserExists(userName);
+    }
+
 }

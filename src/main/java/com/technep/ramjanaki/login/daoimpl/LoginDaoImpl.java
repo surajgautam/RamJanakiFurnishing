@@ -17,4 +17,9 @@ public class LoginDaoImpl implements LoginDao {
 
     }
 
+    public boolean isuserExists(String userName) {
+        Long count = (Long) sessionFactory.getCurrentSession().createQuery("Select count(u.uid) From User u where u.userName=:name").setParameter("name", userName).uniqueResult();
+        return (count==0)?false:true;
+    }
+
 }

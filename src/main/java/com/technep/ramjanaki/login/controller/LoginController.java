@@ -29,21 +29,26 @@ public class LoginController {
     public ModelAndView login(@RequestParam("userName") String userName,@RequestParam("password")String password){
         ModelAndView modelAndView = new ModelAndView("index");
         List<Category> allCategories = categoryService.getActiveCategories();
-        User user = loginService.getUserByUserName(userName);
         if(userName!=null){
-            if(user.getPassword().equals(password)){
 
-                httpSession.setAttribute("id",user.getUid());
-                httpSession.setAttribute("userName",user.getUserName());
-                modelAndView.addObject("categories",allCategories);
-                modelAndView.addObject("message","Welcome" + user.getUserName());
-                modelAndView.addObject("userAllProducts",true);
-                return modelAndView;
+            User user = null;
+            //if there is user then only check for password
+            if(loginService.isuserExists(userName)){
+                user = loginService.getUserByUserName(userName);
+                if(user.getPassword().equals(password)){
+
+                    httpSession.setAttribute("id",user.getUid());
+                    httpSession.setAttribute("userName",user.getUserName());
+                    modelAndView.addObject("categories",allCategories);
+                    modelAndView.addObject("message","Welcome" + user.getUserName());
+                    modelAndView.addObject("userAllProducts",true);
+                    return modelAndView;
+                }
             }
+
         }
 
-        modelAndView.addObject("message","UserName and password doesn't match");
-        return  modelAndView;
+        return new ModelAndView("index").addObject("userLogin",true).addObject("message","Invalid login");
     }
 
 }
