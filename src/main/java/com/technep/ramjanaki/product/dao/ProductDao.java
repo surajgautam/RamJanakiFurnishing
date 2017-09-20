@@ -21,4 +21,5 @@ public interface ProductDao {
 
     void insertProduct(Product product);
 
+
 }

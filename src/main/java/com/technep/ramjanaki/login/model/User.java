@@ -13,20 +13,26 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int uid;
-    @Column(name = "ecommerce_username")
+    @Column(name="username")
     private String userName;
 
-    @Column(name = "ecommerce_password", length = 120000)
+    @Column(name = "password",length = 120000)
     private String password;
 
-    @Column(name = "ecommerce_address")
+    @Column(name = "address")
     private String address;
 
-    @Column(name="ecommerce_mobile_number")
+    @Column(name="mobileNumber")
     private String mobileNumber;
 
-    @Column(name="ecommerce_email")
+    @Column(name="email")
     private String email;
+
+    @Column(name="role")
+    private String role;
+
+    @Column(name="enabled")
+    private boolean status;
 
 
     public int getUid() {
@@ -75,5 +81,21 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }

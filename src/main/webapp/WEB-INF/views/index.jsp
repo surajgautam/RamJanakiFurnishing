@@ -162,6 +162,7 @@
     <script src="<c:url value="/resources/app.js" />"> </script>
     <script src="<c:url value="/resources/controllers/signupformvalidationcontroller.js" />"> </script>
     <script src="<c:url value="/resources/services/signupservice.js" />"> </script>
+    <script src="<c:url value="/resources/controllers/PaymentController.js" />"> </script>
 
 <%--
 
