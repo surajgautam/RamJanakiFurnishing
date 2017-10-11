@@ -1,5 +1,6 @@
 package com.technep.ramjanaki.signup.daoimpl;
 
+import com.technep.ramjanaki.login.model.CodeUser;
 import com.technep.ramjanaki.login.model.User;
 import com.technep.ramjanaki.signup.dao.SignupDao;
 import org.hibernate.SessionFactory;
@@ -15,6 +16,15 @@ public class SignupDaoImpl implements SignupDao {
 
         sessionFactory.getCurrentSession().save(user);
 
+    }
+
+    public void saveCodeUser(CodeUser user) {
+        sessionFactory.getCurrentSession().save(user);
+    }
+
+    public boolean isValidCode(Integer code) {
+        CodeUser codeUser = (CodeUser) sessionFactory.getCurrentSession().createQuery("From CodeUser u where u.code =:code").setParameter("code", code).uniqueResult();
+        return codeUser!=null;
     }
 
 }

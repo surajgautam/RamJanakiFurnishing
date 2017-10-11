@@ -1,5 +1,6 @@
 package com.technep.ramjanaki.signup.serviceimpl;
 
+import com.technep.ramjanaki.login.model.CodeUser;
 import com.technep.ramjanaki.login.model.User;
 import com.technep.ramjanaki.signup.dao.SignupDao;
 import com.technep.ramjanaki.signup.service.SigupService;
@@ -17,5 +18,13 @@ public class SignupServiceImpl implements SigupService {
 
         signupDao.saveUser(user);
 
+    }
+
+    public void saveCodeUser(CodeUser user) {
+        signupDao.saveCodeUser(user);
+    }
+
+    public boolean isValidCode(Integer code) {
+        return signupDao.isValidCode(code);
     }
 }

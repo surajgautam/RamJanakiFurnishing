@@ -117,6 +117,10 @@
         <c:if test="${signupSuccessful == true}">
             <%@include file="login.jsp"%>
         </c:if>
+
+        <c:if test="${verifySuccess == true}">
+            <%@include file="verifypage.jsp"%>
+        </c:if>
         
 
 

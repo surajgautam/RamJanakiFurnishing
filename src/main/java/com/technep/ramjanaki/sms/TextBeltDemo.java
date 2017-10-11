@@ -11,21 +11,22 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.util.Random;
 
-@PropertySource("classpath:application.properties")
+
 public class TextBeltDemo {
 
-  /*  @Value(value = "${sms.apikey}")
-    public static String apiKey;
-    public static String sendSms() {
+    public static String sendSms(Integer code,String number) {
         try {
 
 //            http://api.txtlocal.com/docs/sendsms
             // Construct data
-            String apiKey = "apikey=" + "";
-            String message = "&message=" + "Thank you for signing with Ramjanaki furnishing";
+            String apiKey = "apikey=" + "Fe2K522x5+4-CJVNGSCluYcJRKCIVDNVfXemoht7Zn";
+            /*Random random = new Random();
+            Integer code =  10000 + random.nextInt(99999);*/
+            String message = "&message=" + "Thank you for signing with Ramjanaki furnishing.Your verification code is "+ code;
             String sender = "&sender=" + "RamJanaki Furnishing";
-            String numbers = "&numbers=" + "+";
+            String numbers = "&numbers=" + "+977"+number;
 
             // Send data
             HttpURLConnection conn = (HttpURLConnection) new URL("https://api.txtlocal.com/send/?").openConnection();
@@ -41,16 +42,13 @@ public class TextBeltDemo {
                 stringBuffer.append(line);
             }
             rd.close();
-
+            System.out.println("MESSAGE SENDING SUCCESSFULLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
             return stringBuffer.toString();
+
         } catch (Exception e) {
             System.out.println("Error SMS "+e);
             return "Error "+e;
         }
     }
 
-    public static void main(String[] args) {
-        System.out.println(sendSms());
-        System.out.println(apiKey);
-    }*/
-}
+    }
