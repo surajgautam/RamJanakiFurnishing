@@ -54,6 +54,7 @@
                 <value>com.technep.ramjanaki.login.model</value>
                 <value>com.technep.ramjanaki.payment.model</value>
                 <value>com.technep.ramjanaki.sales.model</value>
+                <value>com.technep.ramjanaki.admin.model</value>
             </array>
 
         </property>

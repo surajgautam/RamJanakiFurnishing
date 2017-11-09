@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TrialBalance" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="65898952-e99a-41e3-8e73-d7aa26c09784">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="date" class="java.sql.Date"/>
+	<parameter name="title" class="java.lang.String"/>
+	<parameter name="sid" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="quantity" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" x="340" y="0" width="100" height="30" uuid="0344bd0e-fd66-4a4b-a2f7-bc7234295a68"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Date: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="0" width="120" height="30" uuid="7d074083-ba02-453e-9ad3-ee5db54a3df3"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="40" width="290" height="30" uuid="b14ef5a7-b033-4bbe-960a-df6d43bf22b4"/>
+				<textElement textAlignment="Center">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{title}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="-12" y="30" width="60" height="29" uuid="ae33955a-efff-4476-9b39-55ce303e2431"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="73" y="30" width="100" height="30" uuid="9bdd302d-c7e2-4742-9104-d25e73fd7465"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Product]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="202" y="29" width="100" height="30" uuid="2bc5abe4-1396-4cac-9717-ed59c63cb57c"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="341" y="29" width="100" height="30" uuid="581b8430-6f59-430e-bf06-7d288c931de7"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Tax Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="29" width="100" height="30" uuid="85cbb97e-4a02-4329-8db7-8936b9ee0703"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Total Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="0" width="100" height="30" uuid="ccfd2a86-ab59-4758-a491-d2a600dc223a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ee7097b3-ce9a-42d5-8fec-639471abf320"/>
+				</reportElement>
+				<text><![CDATA[quantity]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="aaefa909-2767-4f51-b88e-6069d158c5fe"/>
+				<textFieldExpression><![CDATA[$P{sid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="1" width="100" height="30" uuid="db94489f-8918-4657-8ee0-c471f95fdb5b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ee7097b3-ce9a-42d5-8fec-639471abf320"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

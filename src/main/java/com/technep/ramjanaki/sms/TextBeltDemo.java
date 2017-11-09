@@ -21,7 +21,7 @@ public class TextBeltDemo {
 
 //            http://api.txtlocal.com/docs/sendsms
             // Construct data
-            String apiKey = "apikey=" + "Fe2K522x5+4-CJVNGSCluYcJRKCIVDNVfXemoht7Zn";
+            String apiKey = "apikey=" + "jSY/+ks+JGg-Xn4DezUDNSWJKUklNbYXCavMPcQO05";
             /*Random random = new Random();
             Integer code =  10000 + random.nextInt(99999);*/
             String message = "&message=" + "Thank you for signing with Ramjanaki furnishing.Your verification code is "+ code;
